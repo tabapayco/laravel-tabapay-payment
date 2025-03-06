@@ -8,6 +8,6 @@ class PaymentFacade extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return \Tabapay\Payment\Payment::class;
+        return \Tabapay\Payment\TabaPay::class;
     }
 }
