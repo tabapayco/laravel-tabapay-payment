@@ -2,7 +2,7 @@
 
 namespace Tabapay\Payment;
 
-class Payment
+class TabaPay
 {
     private $createUrl;
     private $verifyUrl;
