@@ -34,7 +34,7 @@ $data = [
     'additionalData' => null,
 	
 ];
-$response = Payment::createTransaction($data);
+$response = TabaPay::createTransaction($data);
 
 if ($response['status'] === 'success') {
     return redirect($response['url']);
@@ -57,7 +57,7 @@ public function verifyCallback(Request $request)
     }elseif ($request->query('status') === 'success' && $request->query('responseCode') == 1) {
 		$token = $request->query('token');
 		$amount = $request->query('amount');
-        $response = Payment::verifyTransaction($token, $amount);
+        $response = TabaPay::verifyTransaction($token, $amount);
         return response()->json($response);
     }
 	
