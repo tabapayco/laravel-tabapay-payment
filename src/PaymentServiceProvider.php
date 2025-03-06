@@ -15,8 +15,8 @@ class PaymentServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->singleton(Payment::class, function () {
-            return new Payment();
+        $this->app->singleton(TabaPay::class, function () {
+            return new TabaPay();
         });
 
         $this->mergeConfigFrom(__DIR__ . '/../config/payment.php', 'payment');
