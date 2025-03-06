@@ -23,7 +23,7 @@ class TabaPay
         }
     }
 
-    public function createTransaction(
+    public static function createTransaction(
 		int $amount,
 		string $callbackURL,
 		?string $mobile = null,
@@ -53,7 +53,7 @@ class TabaPay
 			return $this->sendRequest('post', $this->createUrl, $postData);
 	}
 
-	public function verifyTransaction(string $token, int $amount){
+	public static function verifyTransaction(string $token, int $amount){
 		$maxAttempts = 3;
 		$attempt = 0;
 		$responseData = null;
